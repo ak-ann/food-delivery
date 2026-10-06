@@ -1,10 +1,16 @@
 const express = require('express');
-
 const router = express.Router();
 
 const orderController = require('../controllers/orderController');
+const authMiddleware = require('../middleware/auth');
+const isAdmin = require('../middleware/isAdmin');
 
-router.get('/', orderController.getAllOrders);
+router.get(
+    '/',
+    authMiddleware,
+    isAdmin,
+    orderController.getAllOrders
+);
 
 router.get('/:id', orderController.getOrderById);
 

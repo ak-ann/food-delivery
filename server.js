@@ -8,9 +8,13 @@ const PORT = 3000;
 
 const orderRoutes = require('./routes/orderRoutes');
 
+const authRoutes = require('./routes/auth');
+
 app.use(express.json());
 
 app.use('/orders', orderRoutes);
+
+app.use('/auth', authRoutes);
 
 app.use((req, res) => {
     res.status(404).json({

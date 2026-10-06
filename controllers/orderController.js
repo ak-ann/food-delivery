@@ -1,6 +1,5 @@
 const { Order } = require('../models');
 
-// GET /orders
 exports.getAllOrders = async (req, res) => {
     try {
         const orders = await Order.findAll();
@@ -15,7 +14,6 @@ exports.getAllOrders = async (req, res) => {
     }
 };
 
-// GET /orders/:id
 exports.getOrderById = async (req, res) => {
     try {
         const id = Number(req.params.id);
@@ -38,7 +36,6 @@ exports.getOrderById = async (req, res) => {
     }
 };
 
-// POST /orders
 exports.createOrder = async (req, res) => {
     try {
         const {
@@ -99,7 +96,6 @@ exports.createOrder = async (req, res) => {
     }
 };
 
-// PUT /orders/:id
 exports.updateOrder = async (req, res) => {
     try {
         const id = Number(req.params.id);
@@ -173,7 +169,6 @@ exports.updateOrder = async (req, res) => {
     }
 };
 
-// DELETE /orders/:id
 exports.deleteOrder = async (req, res) => {
     try {
         const id = Number(req.params.id);

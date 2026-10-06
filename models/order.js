@@ -7,7 +7,6 @@ const {
 module.exports = (sequelize, DataTypes) => {
     class Order extends Model {
         static associate(models) {
-            // Связи с другими моделями можно добавить позже
         }
     }
 
