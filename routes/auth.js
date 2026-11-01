@@ -8,11 +8,6 @@ const authMiddleware = require('../middleware/auth');
 const router = express.Router();
 
 
-// =========================
-// РЕГИСТРАЦИЯ
-// POST /auth/register
-// =========================
-
 router.post('/register', async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -57,11 +52,6 @@ router.post('/register', async (req, res) => {
     }
 });
 
-
-// =========================
-// ВХОД
-// POST /auth/login
-// =========================
 
 router.post('/login', async (req, res) => {
     try {
@@ -119,11 +109,6 @@ router.post('/login', async (req, res) => {
 });
 
 
-// =========================
-// ПРОФИЛЬ
-// GET /auth/profile
-// =========================
-
 router.get('/profile', authMiddleware, async (req, res) => {
     try {
         const user = await User.findByPk(req.user.id, {
@@ -146,5 +131,4 @@ router.get('/profile', authMiddleware, async (req, res) => {
 });
 
 
-// Экспорт роутера
 module.exports = router;

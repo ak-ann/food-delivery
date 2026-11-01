@@ -65,8 +65,7 @@ function App() {
   const [statusFilter, setStatusFilter] = useState('Все');
   const [notice, setNotice] = useState('');
 
-  // Сохраняем список после изменения.
-  // Задержка 500 мс реализует debounce.
+
   useEffect(() => {
     const timer = setTimeout(() => {
       try {
@@ -83,7 +82,7 @@ function App() {
     return () => clearTimeout(timer);
   }, [orders]);
 
-  // Меняем заголовок вкладки при изменении количества заказов.
+  
   useEffect(() => {
     document.title = `Заказы (${orders.length}) | Food Delivery`;
 
